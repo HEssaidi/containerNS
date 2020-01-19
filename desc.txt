@@ -1,0 +1,22 @@
+NAME
+       clone, __clone2, clone3 - create a child process
+
+SYNTAX
+       int clone(int (*fn)(void *), void *stack, int flags, void *arg, ...
+                 /* pid_t *parent_tid, void *tls, pid_t *child_tid */ );
+ as :
+    fn : pointer to the function being executed by child process.
+    stack : stack used by child process.
+    flags : 6 flags (see the )
+    arg: arguments of fn function.
+
+
+FLAGS :
+    clone(2) with CLONE_NEWPID : To create a child process with PID=1 (new processes tree), we will get a process id from the new tree.
+    clone(2) with CLONE_NEWNET: To create a child process with different network interfaces.
+    clone(2) with CLONE_NEWNS: isolate also the file system. The child started in a new mount namaspace.
+    clone(2) with CLONE_NEWUTS : Identification of system This includes the hostname. It allows a container to have it's own hostname independently from the host system.
+    clone(2) with CLONE_NEWIPC : IPC namespace is used for isolating interprocess communication, things like SysV message queues. It concerns messages exchanged between processes.
+    clone(2) with CLONE_NEWuSER : allows you to have users within this namespace that are not equal users outside of the namespace. This is accomplished via GID and UID mappings.
+       
+ 
