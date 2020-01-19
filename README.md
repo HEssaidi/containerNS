@@ -15,6 +15,10 @@ Run this program using sudo – you will get a different shell, file system and 
 
 
 The first file .txt : is a description of our clone function and its flags 
+
+
+
+Those files are C programmes
 Second file .c : tests for clone function using each flag ; when you run each programm you should add the command as specified 
                  after running the programm (./programm)
 Third fie .c : the entire programm adding a function that will add an ip address to our container , and he can ping on his 
